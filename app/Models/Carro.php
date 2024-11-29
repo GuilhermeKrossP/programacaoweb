@@ -9,7 +9,12 @@ class Carro extends Model
 {
     protected $fillable=[
         'modelo',
-        'ano'
+        'ano',
+        'pessoa_id'
     ];
-
+    
+    public function pessoa():BelongsTo
+    {
+        return $this->belongsTo(Pessoa::class, 'pessoa_id');
+    }
 }
